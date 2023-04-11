@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+}
+
+.tableDiv{
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+th{
+  background-color: blue;
+  color: white;
+  font-weight: 600;
+  font-size: larger;
+}
+
+h1{
+  text-align: center;
+  font-weight: 600;
+  font-size: xx-large;
+  padding: 2%;
+}
+
+table.even tr:nth-child(2n+2){
+	/* background:#ccc; */
+  background-color: rgb(189, 246, 246);
+}
+
+::ng-deep .mat-sort-header-arrow{
+  color: white;
+}
+
+.send-button{
+color: blue;
+}

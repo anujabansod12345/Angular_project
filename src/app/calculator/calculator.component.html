@@ -1,0 +1,64 @@
+<h1 style="text-align: center; font-weight: 500;">This is my Calculator</h1>
+<div style="display: flex; height:720px; justify-content:center; align-items:center;">
+<div class="mycalc">
+  <input [(ngModel)]="initialNum" type="text" >
+  <div class="all-btn">
+    <div class="all-btn-numbers">
+      <button (click)="function('1')">1</button>
+      <button (click)="function('2')">2</button>
+      <button (click)="function('3')">3</button>
+      <button (click)="function('4')">4</button>
+      <button (click)="function('5')">5</button>
+      <button (click)="function('6')">6</button>
+      <button (click)="function('7')">7</button>
+      <button (click)="function('8')">8</button>
+      <button (click)="function('9')">9</button>
+      <button (click)="function('0')">0</button>
+    <div class="btn-extra">
+      <button (click)="function('.')">.</button>
+      <button (click)="back()">Back</button>
+    </div>
+    </div>
+    <div class="all-btn-signs">
+      <button (click)="function('+')">+</button>
+      <button (click)="function('-')">-</button>
+      <button (click)="function('*')">*</button>
+      <button (click)="function('/')">/</button>
+    </div>
+  </div>
+  <div class="btn-clear-equals">
+    <button (click)="clear()" id="clear">Clear</button>
+    <button (click)="equal()" id="equals">=</button>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="content" role="main">
+  Enter first number: <input type="text" [(ngModel)]="firstNumber">
+  <br>
+  Enter second number: <input type="text" [(ngModel)]="secondNumber">
+  <br>
+  <p>The result: {{result}}</p>
+  <button mat-raised-button color="primary" (click)="Addnumbers()">ADD</button>
+  <button mat-raised-button color="primary" (click)="Subnumbers()">SUB</button>
+  <button mat-raised-button color="primary" (click)="Mulnumbers()">MUL</button>
+  <button mat-raised-button color="prllimary" (click)="Divnumbers()">DIV</button>
+  <br>
+  </div> -->
+
+

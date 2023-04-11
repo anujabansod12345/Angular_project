@@ -1,0 +1,134 @@
+<div class="div1">
+  <h1> {{title}}</h1>
+  <div>
+    <form [formGroup]="form">
+      <table>
+        <tr>
+          <td>Employee ID</td>
+          <td>
+            <mat-form-field>
+              <input matInput [(ngModel)]="emp.employeeId" formControlName="employeeId" id="employeeId" placeholder="Employee ID" required>
+              <mat-error *ngIf="hasError('employeeId', 'required')">Employee ID is <strong>required</strong></mat-error>
+              <mat-error *ngIf="hasError('employeeId', 'maxlength')">You have more than 8 characters</mat-error>
+              <mat-error *ngIf="hasError('employeeId', 'pattern')">Only alphaNumeric characters are alloweded</mat-error>
+            </mat-form-field>
+          </td>
+
+          <td>Company</td>
+          <td>
+            <mat-form-field>
+              <mat-select id="companyName" formControlName="companyName" [(ngModel)]="emp.empCompanyId"
+                placeholder="Select Company" required>
+                <mat-option *ngFor="let company of allcompany" [value]="company.companyId">{{company.companyName}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="employeeId.hasError('required')">
+                Company Name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>First Name</td>
+          <td>
+
+            <mat-form-field>
+              <input matInput type="text" placeholder="First Name" id="firstName" formControlName="firstName" [(ngModel)]="emp.empFirstName" placeholder="First Name" required>
+              <mat-hint >Not more then 100 characters long.</mat-hint>
+              <mat-error *ngIf="hasError('firstName', 'required')">First Name is <strong>required</strong></mat-error>
+              <mat-error *ngIf="hasError('firstName', 'maxlength')">You have more than 100 characters</mat-error>
+              <mat-error *ngIf="hasError('firstName', 'pattern')">Only alphabets are allowed</mat-error>
+            </mat-form-field>
+          </td>
+
+          <td>Last Name</td>
+          <td>
+            <mat-form-field>
+              <input matInput id="lastName" formControlName="lastName"  [(ngModel)]="emp.empLastName" placeholder="Last Name" required>
+              <mat-hint >Not more then 100 characters long.</mat-hint>
+              <mat-error *ngIf="hasError('lastName', 'required')">Last Name is <strong>required</strong></mat-error>
+              <mat-error *ngIf="hasError('lastName', 'maxlength')">You have more than 100 characters</mat-error>
+              <mat-error *ngIf="hasError('lastName', 'pattern')">Only alphabets are allowed</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Gender</td>
+          <td>
+            <mat-form-field>
+              <mat-select formControlName="Gender" [(ngModel)]="emp.empGender" placeholder="Select Gender" required>
+                <mat-option value="M">
+                  Male
+                </mat-option>
+                <mat-option value="F">
+                  Female
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="employeeId.hasError('required')">
+                Gender is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </td>
+
+          <td>Joining Date</td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose a date</mat-label>
+              <input id="joiningDate" formControlName="joiningDate" [(ngModel)]="emp.empJoiningDate" matInput
+                [matDatepicker]="JoiningDatePicker" required>
+              <mat-datepicker-toggle matSuffix [for]="JoiningDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #JoiningDatePicker></mat-datepicker>
+              <mat-error *ngIf="employeeId.hasError('required')">
+                Joining Date is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Designation</td>
+          <td>
+            <mat-form-field>
+              <mat-select id="designationId" formControlName="designationId" [(ngModel)]="emp.empDesignationId"
+                placeholder="Select Designation" required>
+                <mat-option *ngFor="let Designation of allDesignation" [value]="Designation.designationId">
+                  {{Designation.designationName}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="employeeId.hasError('required')">
+                Designation is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </td>
+
+          <td>Resignation Date</td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose a date</mat-label>
+              <input id="ResignationDate" formControlName="ResignationDate" [(ngModel)]="emp.empResignationDate"
+                matInput [matDatepicker]="ResignationDatepicker" [disabled]="ShowResignationDate">
+              <mat-datepicker-toggle matSuffix [for]="ResignationDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #ResignationDatepicker></mat-datepicker>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Salary Rate</td>
+          <td>
+            <mat-form-field>
+              <input matInput type="number" id="salaryRate" formControlName="salaryRate"
+                [(ngModel)]="emp.empHourlySalaryRate" placeholder="Salary Rate" required>
+                <mat-error *ngIf="hasError('salaryRate', 'pattern')">Only numbers are allowed</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+
+      </table>
+    </form>
+  </div><br><br>
+  <button mat-raised-button *ngIf="Showsave" (click)="saveEmployee()">Save</button>&nbsp;&nbsp;&nbsp;
+  <button mat-raised-button *ngIf="ShowUpdate" (click)="updateEmployee()">Update</button>&nbsp;&nbsp;&nbsp;
+  <button mat-raised-button (click)="closeDialog()" *ngIf="ShowDelete">Cancel</button>
+</div>

@@ -1,0 +1,32 @@
+.div0{
+  /* margin-left: 35%;
+  height: 400px;
+  width: 300px; */
+  margin-top: 20%;
+  margin-left: 250%;
+  height: 400px;
+  width: 300px;
+}
+
+.div1{
+  margin-top: 20%;
+  margin-left: 20%;
+  height: 400px;
+  width: 300px;
+
+}
+
+.div2{
+  margin-top: 20%;
+  margin-left: 25%;
+  height: 400px;
+  width: 300px;
+}
+
+.heading{
+  position: relative;
+  background-color: blue;
+  color: white;
+  margin-right:5%;
+  margin-left: 5%;
+}

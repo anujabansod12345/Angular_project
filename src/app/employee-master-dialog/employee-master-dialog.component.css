@@ -1,0 +1,28 @@
+h1{
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding: 1%;
+}
+
+input{
+  padding: 2%;
+}
+
+td{
+  font-weight: bold;
+
+}
+
+button{
+  background-color: blue;
+  color: white;
+  font-weight: 600;
+  padding: 1%;
+  width: 100px;
+}
+
+.div1{
+  border: 2px solid blue;
+  padding: 3%;
+}

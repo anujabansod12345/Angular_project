@@ -1,0 +1,55 @@
+
+<div style="height: 100%; margin-top: 0%;">
+<p>
+  <mat-toolbar color="primary" style="padding: 20px; height:5%">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="sideNav.toggle()" >
+      <mat-icon>menu</mat-icon>
+    </button>&nbsp;
+    <span>Astoria Training- Attendance System</span>
+  </mat-toolbar>
+</p>
+
+  <mat-sidenav-container class="sidenav" style="height: 90%;">
+    <mat-sidenav #sideNav mode="side" style="background-color: black;" opened>
+      <mat-nav-list>
+      <a style="color: white;" mat-list-item routerLink="/home"><mat-icon style="color: white;">home</mat-icon>HOME</a>
+      <a  style="color: white;" mat-list-item routerLink="/employeedetails"><mat-icon style="color: white;">supervisor_account</mat-icon>EMPLOYEE DETAILS</a>
+      <a  style="color: white;" mat-list-item routerLink="/employeeattendance"><mat-icon style="color: white;">watch_later</mat-icon>EMPLOYEE ATTENDANCE</a>
+      <a  style="color: white;" mat-list-item routerLink="/dashboard"><mat-icon style="color: white;">space_dashboard</mat-icon>DASHBOARD</a>
+      <a  style="color: white;" mat-list-item routerLink="/calculator"><mat-icon style="color: white;">calculate</mat-icon>CALCULATOR</a>
+      <a  style="color: white;" mat-list-item routerLink="/practise"><mat-icon style="color: white;">accessibility</mat-icon>PRACTICE</a>
+        
+    </mat-nav-list>
+     
+  </mat-sidenav>
+
+  <mat-sidenav-content style="padding-left: 0px 0px;">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+ 
+  </mat-sidenav-container>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <app-home></app-home> --><!--recent_actors-->
+<!-- - <!- <app-calculator></app-calculator> -->
+
+
+<!-- <div class="content" role="main">
+Welcome to my first angular application
+</div> -->
+
+
